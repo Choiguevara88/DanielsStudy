@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Images</title>
+    </head>
+    <body>
+        <h2>HTML Image</h2>
+        <img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Trulli" width="500" height="333">
+        
+        <h2>HTML Image</h2>
+        <img src="https://www.w3schools.com/html/img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
+
+        <h2>HTML Image</h2>
+        <img src="https://www.w3schools.com/html/img_chania.jpg" alt="Flowers in Chania" width="460" height="345">
+
+        
+        <h1>HTML Images Syntax</h1>
+        <p>src - Specifies the path to the image</p>
+        <p>alt - Specifies an alternate text for the image</p>
+        <p>&lt;img src="url" alt="alternatetext"&gt;</p>
+
+        <p>&lt;img src="https://www.w3schools.com/html/img_chania.jpg" alt="Flowers in Chania" width="460" height="345"&gt;</p>
+        <img src="https://www.w3schools.com/html/img_chania.jpg" alt="Flowers in Chania" width="460" height="345">
+        
+        <hr />
+        <p>Image Map Pass</p>
+        <p>Background Pass</p>
+
+        <hr />
+
+        <h2>The picture Element 요고 신기하네</h2>
+
+        <picture>
+            <source media="(min-width: 650px)" srcset="https://www.w3schools.com/html/img_food.jpg">
+            <source media="(min-width: 465px)" srcset="https://www.w3schools.com/html/img_car.jpg">
+            <img src="https://www.w3schools.com/html/img_girl.jpg" style="width:auto;">
+        </picture>
+
+        <p>Resize the browser to see different versions of the picture loading at different viewport sizes.
+        The browser looks for the first source element where the media query matches the user's current viewport width,
+        and fetches the image specified in the srcset attribute.</p>
+
+        <p>The img element is required as the last child tag of the picture declaration block.
+        The img element is used to provide backward compatibility for browsers that do not support the picture element, or if none of the source tags matched.
+        </p>
+
+        <p><strong>Note:</strong> The picture element is not supported in IE12 and earlier or Safari 9.0 and earlier.</p>
+    </body>
+</html>
