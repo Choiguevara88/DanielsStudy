@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .outterBox { position:relative; background-image: url("../Asset/Images/javaScriptBackground.jpg"); width:1200px; height:820px; width:100%; background-repeat:no-repeat; }
+        .innerBox { position:absolute; top:50%; transform:translateY(-50%); text-align: center;}
+        a {text-decoration:none; background-color:rgb(255,255,255,0.8); padding:10px 30px; border-radius: 10px; margin:10px; display: inline-block;}
+        a:hover {background-color:rgb(255,255,255,1)}
+        h1 { color:white;  width:1200px; text-align: center;}
+        button {width:100px; height:30px;}
+    </style>
+    <body>
+        <div class="outterBox">
+            <div class="innerBox">
+                <a href="./function_04.html">&lt; back</a>
+                <a href="./function_05.html">next &gt;</a>
+                <h1 id="p1">타이머를 시작하려면 시작을 누르세요</h1>
+                <button type="button" onclick="javascript:timerOn()">시작</button>
+                <button type="button" onclick="javascript:timerOff()">종료</button>
+            </div>
+        </div>
+    <script>        
+        let timerSwitch = null;
+        const printTime = () => {
+            let today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            document.getElementById("p1").innerHTML = h + ":" + m + ":" + s;
+        }
+        const timerOn = () => {
+            printTime();
+            timerSwitch = setInterval(printTime,1000);
+        }
+        const timerOff = () => {
+            document.getElementById("p1").innerHTML = "타이머 종료";
+            if(timerSwitch != null) clearInterval(timerSwitch);
+        }
+    </script>
+    </body>
+</html>
