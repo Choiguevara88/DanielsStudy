@@ -2,7 +2,16 @@
 <html>
     <body>
     <script>
-    
+        // ArrowFunction으로 표기 / explorer에서는 작동 안함
+        const calc = (mode) => {
+            const functions = {
+                "plus"  : (left, right) => (left + right),
+                "minus" : (left, right) => (left - right)
+            }
+            return functions[mode];
+        }
+        document.write("calc('plus')(2,1) => " + calc('plus')(2,1) + "<br />");
+        document.write("calc('minus')(2,1) => " + calc('minus')(2,1) + "<br />");
     </script>
     </body>
 </html>
