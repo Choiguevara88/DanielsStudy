@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .outterBox { position:relative; background-image: url("../Asset/Images/javaScriptBackground.jpg"); width:1200px; height:820px; width:100%; background-repeat:no-repeat; }
+        .innerBox { position:absolute; top:50%; transform:translateY(-50%); text-align: center;}
+        a {text-decoration:none; background-color:rgb(255,255,255,0.8); padding:10px 30px; border-radius: 10px; margin:10px; display: inline-block;}
+        a:hover {background-color:rgb(255,255,255,1)}
+        h1 { color:white;  width:1200px; text-align: center;}
+    </style>
+    <body>
+        <div class="outterBox">
+            <div class="innerBox">
+                <a href="./function_02.html">&lt; back</a>
+                <a href="./function_04.html">next &gt;</a>
+                <h1 id="p1">1</h1>
+                <h1 id="p2">2</h1>
+                <h1 id="p3">3</h1>
+                <h1 id="p4">4</h1>
+            </div>
+        </div>
+    <script>
+        const calc = (a, b, type, callback) => {
+            let result = '';
+            switch(type) {
+                case "plus"     : result = a + b; break;
+                case "minus"    : result = a - b; break;
+                case "multiply" : result = a * b; break;
+                case "divide"   : result = a / b; break;
+            }
+            callback(result); //!!!!!!
+        }
+        calc(10, 5, "plus", function(result){
+            document.getElementById('p1').innerHTML = "callback plus => " + result;
+        });
+        calc(10, 5, "minus", function(result){
+            document.getElementById('p2').innerHTML = "callback minus => " + result;
+        });
+        calc(10, 5, "multiply", function(result){
+            document.getElementById('p3').innerHTML = "callback multiply => " + result;
+        });
+        calc(10, 5, "divide", function(result){
+            document.getElementById('p4').innerHTML = "callback divide => " + result;
+        });
+    </script>
+    </body>
+</html>

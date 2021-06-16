@@ -10,17 +10,27 @@
     <body>
         <div class="outterBox">
             <div class="innerBox">
-                <a href="./function_02.html">next &gt;</a>
-                <h1 id="p1"></h1>
-                <h1 id="p2"></h1>
+                <a href="./function_02.html">&lt; back</a>
+                <a href="./function_04.html">next &gt;</a>
+                <h1 id="p1">1</h1>
+                <h1 id="p2">2</h1>
+                <h1 id="p3">3</h1>
             </div>
         </div>
-        <script>
-            function calc(func, num)    { return func(num); }
-            function increase(num)      { return num + 1; }
-            function decrease(num)      { return num - 1; }
-            document.getElementById('p1').innerHTML = "calc(increase,1) => " + calc(increase, 1);
-            document.getElementById('p2').innerHTML = "calc(decrease,1) => " + calc(decrease, 1);
-        </script>
+    <script>
+        // 객체형 자료형
+        const process = {
+            1: (input)=>{ return input + 10 },
+            2: (input)=>{ return input * input },
+            3: (input)=>{ return input / 2 },
+        }
+        let input = 1;
+        
+        for(i in process) {
+            let tmp_input = input;
+            input = process[i](input);
+            document.getElementById('p'+i).innerHTML = "process["+i+"]("+tmp_input+") =>" + input;
+        }
+    </script>
     </body>
 </html>

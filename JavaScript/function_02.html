@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html>
+    <style>
+        .outterBox { position:relative; background-image: url("../Asset/Images/javaScriptBackground.jpg"); width:1200px; height:820px; width:100%; background-repeat:no-repeat; }
+        .innerBox { position:absolute; top:50%; transform:translateY(-50%); text-align: center;}
+        a {text-decoration:none; background-color:rgb(255,255,255,0.8); padding:10px 30px; border-radius: 10px; margin:10px; display: inline-block;}
+        a:hover {background-color:rgb(255,255,255,1)}
+        h1 { color:white;  width:1200px; text-align: center;}
+    </style>
     <body>
+        <div class="outterBox">
+            <div class="innerBox">
+                <a href="./function_01.html">&lt; back</a>
+                <a href="./function_03.html">next &gt;</a>
+                <h1 id="p1">1</h1>
+                <h1 id="p2">2</h1>
+            </div>
+        </div>
     <script>
         // ArrowFunction으로 표기 / explorer에서는 작동 안함
         const calc = (mode) => {
+            // 객체형 자료형
             const functions = {
-                "plus"  : (left, right) => (left + right),
-                "minus" : (left, right) => (left - right)
+                // ArrowFunction으로 표기 / explorer에서는 작동 안함
+                "plus"  : (left, right) => { return left + right },
+                "minus" : (left, right) => { return left - right },
             }
             return functions[mode];
         }
-        document.write("calc('plus')(2,1) => " + calc('plus')(2,1) + "<br />");
-        document.write("calc('minus')(2,1) => " + calc('minus')(2,1) + "<br />");
+        document.getElementById('p1').innerHTML = "calc('plus')(2,1) => " + calc('plus')(2,1);
+        document.getElementById('p2').innerHTML = "calc('minus')(2,1) => " + calc('minus')(2,1);
     </script>
     </body>
 </html>
