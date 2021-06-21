@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .container {
+                display:flex;
+                flex-direction:column;
+            }
+            header {
+                border-bottom: 1px solid gray;
+                padding:0px 20px;
+            }
+            footer {
+                border-top:1px solid gray;
+                padding:0px 20px;
+                text-align:center;
+            }
+            .content {display:flex;}
+            nav, aside{flex-basis:150px;flex-shrink:0;}
+            main{ 
+                border-left:1px solid gray;
+                border-right:1px solid gray; 
+                padding:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>이곳은 헤더입니다.</h1>
+            </header>
+            <section class="content">
+                <nav>
+                    <ul>
+                        <li>html</li>
+                        <li>css</li>
+                        <li>javascript</li>
+                        <li>react</li>
+                    </ul>
+                </nav>
+                <main>
+                    <p>이곳은 메인입니다.이곳은 메인입니다.이곳은 메인입니다.이곳은 메인입니다.이곳은 메인입니다.이곳은 메인입니다.이곳은 메인입니다.이곳은 메인입니다.이곳은 메인입니다.이곳은 메인입니다.이곳은 메인입니다.이곳은 메인입니다.</p>
+                </main>
+                <aside>
+                    광고광고
+                </aside>
+            </section>
+            <footer>
+                <p>이곳은 푸터입니다.</p>
+            </footer>
+        </div>
+    </body>
+</html>
