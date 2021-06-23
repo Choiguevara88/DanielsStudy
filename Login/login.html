@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="./fontawsome.css" rel="stylesheet"><!-- https://fontawesome.com/ -->
+</head>
+<body>
+    <div class="container">
+        <header><img src="./MAWER.png" /></header>
+        <section>
+            <form action="/" onsubmit="alert('준비중입니다.');return false;" autocomplete="off">
+            <div class="loginBox">
+                <div class="inputBox">
+                    <label><i class="fas fa-user"></i></label>
+                    <input type="email" name="email" placeholder="Username" required/>
+                </div>
+                <div class="inputBox">
+                    <label><i class="fas fa-key"></i></label>
+                    <input type="password" name="password" placeholder="••••" required/>
+                </div>
+                <button type="submit">로그인하기</button>
+                <a href="./join_input.html">가입하기</a>
+            </div>
+            </form>
+        </section>        
+    </div>        
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가입정보 확인페이지</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body onload="javascript:getParams();">
+    <div class="container">
+        <header><img src="./MAWER.png" /></header>
+        <section>
+            <h1>회원가입 정보</h1>
+            <dl>
+                <dt>이메일</dt><dd id="email"></dd>
+                <dt>비밀번호</dt><dd id="password"></dd>
+                <dt>생년월일</dt><dd id="birth"></dd>
+                <dt>성별</dt><dd id="gender"></dd>
+                <dt>자기소개</dt><dd id="intro"></dd>
+                <dt>이메일 광고 수신 여부</dt><dd id="spamOk"></dd>
+            </dl>
+            <form>
+                <div class="buttonWrapper">
+                    <button class="submit" type="button" onclick="javascript:confrimJoin();">가입신청</button>
+                    <button class="reset" type="button" onclick="javascript:history.go(-1);">이전으로</button>
+                </div>
+            </form>
+
+        </section>
+        <footer>
+            <p>DESIGN BY DANIEL</p>
+        </footer>
+    </div>    
+</body>
+<script>
+
+// get을 가져오기 https://helloitstory.tistory.com/391
+function getParams() {
+    // 현재 URL 가져오기
+    const url = location.href;    
+    // get 파라미터 값을 가져올 수 있는 ? 를 기점으로 slice 한 후 split 으로 나눔
+    const parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+    
+    let paramsObj = {};
+    
+    // 공백이 +인 경우 decode 하는 법 : https://derveljunit.tistory.com/242
+    for (let i = 0; i < parameters.length; i++) {
+        let paramsName = parameters[i].split('=')[0];
+        let paramsValue = decodeURIComponent(decodeURI(parameters[i].split('=')[1]).replace(/\+/g, " "));
+        // let paramsValue2 = decodeURIComponent(parameters[i].split('=')[1]);
+        // console.log(paramsName,"::::",paramsValue2);
+        paramsObj[paramsName] = paramsValue;
+    }
+
+    document.getElementById("email").innerHTML = paramsObj.email;
+    document.getElementById("password").innerHTML = paramsObj.password;
+    document.getElementById("birth").innerHTML = paramsObj.year+"-"+paramsObj.month+"-"+paramsObj.day;
+    document.getElementById("gender").innerHTML = paramsObj.gender;
+    document.getElementById("intro").innerHTML = nl2br(paramsObj.intro);
+    document.getElementById("spamOk").innerHTML = paramsObj.spamOk == "Y" ? "수신함" : "수신하지않음";
+}
+    function nl2br(str){ return str.replace(/\n/g, "<br />") }  
+    
+    function confrimJoin() {
+        if(confirm("입력하신 정보가 맞습니까?")) {
+            alert("회원가입이 완료되었습니다!");
+            location.href="login.html";
+        }
+    }
+</script>
+</html>

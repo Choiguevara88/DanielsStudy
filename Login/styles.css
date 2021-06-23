@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+*{font-family: 'Noto Sans KR', sans-serif;}
+body{padding:0px;margin:0px;width:100%;height:100%;}
+.container {
+    background-color: rgb(230, 254, 249);
+    display         : flex;
+    flex-direction  : column;
+    min-height      : 800px;
+    width           : 100%;
+}
+.container > header {
+    display         : flex;
+    width           : 100%;
+    justify-content : center;
+    padding         : 1.4rem 0rem;
+}
+.container > section { padding-bottom:2rem; }
+.container > section > form > .inputWrapper {
+    display         : flex;
+    flex-direction  : column;
+    margin          : 15px auto;
+    width           : 19rem;
+}
+.container > section > form > .inputWrapper > label {
+    font-size:1rem;
+    font-weight: 100;
+}
+.container > section > form > .inputWrapper > input,
+.container > section > form > .inputWrapper > span > select,
+.container > section > form > .inputWrapper > textarea {
+    border-radius   : 0.3rem;
+    border          : #e2e2e2 solid 1px;
+    padding         : 10px 10px;
+}
+.container > section > form > .inputWrapper > span > select {
+    width           : 30%;
+}
+.container > section > form > .inputWrapper > span > select:last-child {
+    margin-right    :0%;
+}
+.container > section > form > .inputWrapper > span {
+    display:inline-flex;
+}
+.container > section > form > .inputWrapper > span.selectBox  {
+    justify-content: space-between;
+}
+.container > section > form > .inputWrapper > span.radioBox {
+    margin-top:10px;
+}
+.container > section > form > .inputWrapper > span.radioBox > label {
+    display: inline-flex;
+    margin-right:1.5rem;
+    height: 1.4rem;
+}
+.container > section > form > .inputWrapper > span > label > input[type='radio'],
+.container > section > form > .inputWrapper > span > label > input[type='checkbox'] {
+    width   : 1.3rem;
+    height  : 1.3rem;
+    margin  : 0px 4px 0px 0px;
+}
+.container > section > form > .inputWrapper > span > label > span {
+    font-size: 1rem;
+}
+.container > section > form > .inputWrapper > span.radioBox > label > span {
+    align-self: flex-end;
+}
+.container > section > form > .inputWrapper > textarea {
+    resize: none;
+    height: 4rem;
+}
+.container > section > form > .inputWrapper > span.checkBox {
+    margin-top:5px;
+}
+.container > section > form > .inputWrapper > span.checkBox > label {
+    display: inline-flex;
+    margin-right:1.5rem;
+    height: 1.4rem;
+    align-items: center;
+}
+.container > section > form > .inputWrapper > span.checkBox > label > span {
+    align-self: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.container > section > form > .buttonWrapper {
+    display         : flex;
+    margin          : 40px auto;
+    width           : 19rem;
+    justify-content : space-around;
+}
+.container > section > form > .buttonWrapper > button {
+    width           : 7rem;
+    height          : 2.5rem;
+    font-size       : 1.1rem;
+    border-radius   : 5px;
+    border          : none;
+    color           : white;
+    cursor          : pointer;
+    font-weight     : bold;
+}
+.container > section > form > .buttonWrapper > button.submit {
+    background-color: dodgerblue;
+}
+.container > section > form > .buttonWrapper > button.reset {
+    background-color:slategrey;
+}        
+.container > section > form > .buttonWrapper > button:hover {
+    background-color: black;
+}
+.container > section > h1 { text-align:center; font-size: 2rem; font-weight:700; }
+.container > section > dl {
+    width           : 20.5rem;
+    margin          : 15px auto;
+    background      : #FFFFFF;
+    padding         : 1.5rem;
+    border-radius   : 1rem;
+    box-shadow      : 0.1rem 0.1rem 0.5rem #79908b;
+}
+.container > section > dl > dt {
+    font-size       : 1.1rem;
+    font-weight     : 600;
+    color           : #3ea021;
+}
+.container > section > dl > dd {
+    margin          : 0rem 0rem 1rem 0.2rem;
+    font-weight     : 200;
+}
+
+
+
+
+/*푸터*/
+.container > footer {
+    background-color: #212121;
+    color           : #fff;
+    width           : 100%;
+    padding         : 24px 0px;
+}
+.container > footer > p {
+    text-align      : center;
+}
+
+/* 로그인 */
+.container > section > form > .loginBox {
+    margin          : 15px auto;
+    width           : 14rem;
+}
+.container > section > form > .loginBox > .inputBox {
+    display         : flex;
+    flex-direction  : row;
+    margin          : 0.7rem auto;
+    border-radius   : 5px;
+    border          : 1px solid #cecece;
+    background-color: #FFFFFF;
+    height          : 2.5rem;
+}
+.container > section > form > .loginBox > .inputBox > label {
+    border-radius       : 5px 0px 0px 5px;
+    height              : 2.5rem;
+    line-height         : 2.5rem;
+    width               : 2.5rem;
+    font-size           : 1em;
+    text-align          : center;
+    color               : #a0a0a0;
+    background-color    : #ececec;
+}
+.container > section > form > .loginBox > .inputBox > input {
+    border  : none;
+    outline : none;
+    width   : 11.5rem;
+    border-radius   : 0px 5px 5px 5px;
+    padding         : 0px 10px;
+}
+.container > section > form > .loginBox > button {
+    border              : none;
+    width               : 100%;
+    height              : 2.5rem;
+    color               : #FFFFFF;
+    background-color    : dodgerblue;
+    font-size           : 1.1rem;
+    line-height         : 2.5rem;
+    border-radius       : 5px;
+    cursor              : pointer;
+    font-weight         : bold;
+    margin              : 0.3rem auto;
+}
+.container > section > form > .loginBox > a {
+    display     : block;
+    text-align  : center;
+    font-size   : 1.1rem;
+    color       : #212121;
+    margin      : 0.3rem auto;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가입페이지</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body onload="javascript:setYears();setDays(1);">
+    <div class="container">
+        <header><img src="./MAWER.png" /></header>
+        <section>
+            <form name="joinForm" method="GET" action="./join_confirm.html" autocomplete="off" enctype="application/x-www-form-urlencoded" onsubmit="javascript:return checkForm(this)">
+            <div class="inputWrapper">
+                <label for="email">이메일</label>
+                <input type="email" name="email" id="email" placeholder="이메일을 입력해주세요." required/>
+            </div>
+
+            <div class="inputWrapper">
+                <label for="password">비밀번호</label>
+                <input type="password" name="password" id="password" required/>
+            </div>
+            
+            <div class="inputWrapper">
+                <label for="passwordConfirm">비밀번호 재입력</label>
+                <input type="password" name="passwordConfirm" id="passwordConfirm" required/>
+            </div>
+            
+            <div class="inputWrapper">
+                <label for="year">생년월일</label>
+                <span class="selectBox">
+                <select name="year" id="year"></select>
+                <select name="month" id="month" onchange="javascript:setDays(this.value)">
+                    <option value="1" >01월</option>
+                    <option value="2" >02월</option>
+                    <option value="3" >03월</option>
+                    <option value="4" >04월</option>
+                    <option value="5" >05월</option>
+                    <option value="6" >06월</option>
+                    <option value="7" >07월</option>
+                    <option value="8" >08월</option>
+                    <option value="9" >09월</option>
+                    <option value="10">10월</option>
+                    <option value="11">11월</option>
+                    <option value="12">12월</option>
+                </select>
+                <select name="day" id="day"></select>
+                </span>
+            </div>
+
+            <div class="inputWrapper">
+                <label for="">성별</label>
+                <span class="radioBox">
+                    <label><input type="radio" name="gender" value="남자" required/> <span>남자</span></label>
+                    <label><input type="radio" name="gender" value="여자" required/> <span>여자</span></label>
+                </span>
+            </div>
+
+            <div class="inputWrapper">
+                <label for="intro">자기소개</label>
+                <textarea name="intro" id="intro" placeholder="자기소개 내용을 입력해주세요."></textarea>
+            </div>
+
+            <div class="inputWrapper">
+                <label for="intro">이메일 광고 수신 여부</label>
+                <span class="checkBox">
+                    <label><input type="checkbox" name="spamOk" value="Y"/> <span>Mawer의 광고 메일 수신을 동의합니다.</span></label>
+                </span>
+            </div>
+
+            <div class="buttonWrapper">
+                <button class="submit" type="submit">가입하기</button>
+                <button class="reset" type="reset">초기화</button>
+            </div>
+
+            </form>
+        </section>
+        <footer>
+            <p>DESIGN BY DANIEL</p>
+        </footer>
+    </div>
+
+<script>
+    function setYears() {
+        const year = new Date().getFullYear();
+        for(let i=year; i >= (year-100); i--) {
+            let opt   = new Option();
+            opt.value = i;
+            opt.text  = i + "년";
+            document.getElementById("year").add(opt);
+        }
+    }
+    // 월의 마지막 일자 선택 https://hianna.tistory.com/329
+    function setDays(month) {
+        const year  = document.getElementById("year").value;
+        const date  = new Date(year, month, 0).getDate();
+        document.getElementById("day").options.length=0;
+        for(let i=1; i <= date; i++) {
+            let opt     = new Option();
+            opt.value   = i;
+            opt.text    = i+"일";
+            document.getElementById("day").add(opt);
+        }
+    }
+
+    function checkForm(f) {
+        const emailRegex = /^[0-9?A-z0-9?]+(\.)?[0-9?A-z0-9?]+@[0-9A-z]+\.[A-z]{0,3}$/;
+        
+        if(!emailRegex.test(f.email.value)) { 
+            alert("이메일 형식을 맞춰서 입력하세요."); 
+            f.email.focus(); 
+            return false;
+        }
+        if(f.password.value == "") {
+            alert("비밀번호를 입력하세요."); 
+            f.password.focus(); 
+            return false; 
+        }
+        if(f.passwordConfirm.value == "") {
+            alert("비밀번호를 재입력하세요."); 
+            f.passwordConfirm.focus(); 
+            return false; 
+        }
+        if(f.password.value != f.passwordConfirm.value) {
+            alert("비밀번호 확인 입력값이 다릅니다.\n비밀번호를 확인해주세요."); 
+            f.passwordConfirm.focus(); 
+            return false; 
+        }
+        if((f.gender[0].checked || f.gender[1].checked) !== true) {
+            alert("성별을 선택해주세요.");
+            f.gender[0].focus();
+            return false;
+        }
+    }   
+
+</script>
+
+</body>
+</html>
