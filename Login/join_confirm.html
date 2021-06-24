@@ -51,12 +51,12 @@ function getParams() {
         paramsObj[paramsName] = paramsValue;
     }
 
-    document.getElementById("email").innerHTML = paramsObj.email;
-    document.getElementById("password").innerHTML = paramsObj.password;
-    document.getElementById("birth").innerHTML = paramsObj.year+"-"+paramsObj.month+"-"+paramsObj.day;
-    document.getElementById("gender").innerHTML = paramsObj.gender;
-    document.getElementById("intro").innerHTML = nl2br(paramsObj.intro);
-    document.getElementById("spamOk").innerHTML = paramsObj.spamOk == "Y" ? "수신함" : "수신하지않음";
+    document.getElementById("email").innerHTML      = paramsObj.email;
+    document.getElementById("password").innerHTML   = paramsObj.password;
+    document.getElementById("birth").innerHTML      = paramsObj.year+"-"+paramsObj.month+"-"+paramsObj.day;
+    document.getElementById("gender").innerHTML     = paramsObj.gender;
+    document.getElementById("intro").innerHTML      = nl2br(paramsObj.intro);
+    document.getElementById("spamOk").innerHTML     = paramsObj.spamOk == "Y" ? "수신함" : "수신하지않음";
 }
     function nl2br(str){ return str.replace(/\n/g, "<br />") }  
     
