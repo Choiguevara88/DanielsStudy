@@ -48,8 +48,6 @@ function getParams() {
     for (let i = 0; i < parameters.length; i++) {
         let paramsName = parameters[i].split('=')[0];
         let paramsValue = decodeURIComponent(decodeURI(parameters[i].split('=')[1]).replace(/\+/g, " "));
-        // let paramsValue2 = decodeURIComponent(parameters[i].split('=')[1]);
-        // console.log(paramsName,"::::",paramsValue2);
         paramsObj[paramsName] = paramsValue;
     }
 

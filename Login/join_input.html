@@ -30,7 +30,7 @@
             <div class="inputWrapper">
                 <label for="year">생년월일</label>
                 <span class="selectBox">
-                <select name="year" id="year"></select>
+                <select name="year" id="year" onchange="javascript:setDays(document.getElementById(month).value)"></select>
                 <select name="month" id="month" onchange="javascript:setDays(this.value)">
                     <option value="1" >01월</option>
                     <option value="2" >02월</option>
